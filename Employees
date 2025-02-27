@@ -1,0 +1,45 @@
+-- Employees table
+CREATE TABLE employees (
+    employee_id INT,
+    department VARCHAR(50),
+    hire_date DATE,
+    termination_date DATE
+);
+
+INSERT INTO employees VALUES
+(1, 'HR', '2022-01-10', NULL),
+(2, 'Finance', '2021-06-15', '2023-12-20'),
+(3, 'IT', '2023-03-01', NULL),
+(4, 'HR', '2020-09-25', '2024-01-05'),
+(5, 'Finance', '2022-07-11', NULL);
+
+-- Roles table
+CREATE TABLE roles (
+    role_id INT,
+    department VARCHAR(50),
+    status VARCHAR(20), -- ('open', 'filled', 'closed')
+    date_opened DATE,
+    date_filled DATE NULL
+);
+
+INSERT INTO roles VALUES
+(101, 'HR', 'open', '2024-01-10', NULL),
+(102, 'Finance', 'filled', '2023-08-15', '2023-10-10'),
+(103, 'IT', 'closed', '2023-04-20', '2023-06-05'),
+(104, 'Finance', 'open', '2024-02-01', NULL);
+
+-- Salaries table
+CREATE TABLE salaries (
+    employee_id INT,
+    department VARCHAR(50),
+    base_salary DECIMAL(10,2),
+    bonus DECIMAL(10,2),
+    role_status VARCHAR(20) -- ('active', 'terminated')
+);
+
+INSERT INTO salaries VALUES
+(1, 'HR', 80000, 5000, 'active'),
+(2, 'Finance', 95000, 7000, 'terminated'),
+(3, 'IT', 87000, 6000, 'active'),
+(4, 'HR', 75000, 4500, 'terminated'),
+(5, 'Finance', 99000, 7500, 'active');
